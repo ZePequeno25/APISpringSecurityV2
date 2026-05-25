@@ -1,0 +1,104 @@
+{
+  "_type": "collection",
+  "name": "User Service API",
+  "version": "1.0.0",
+  "requests": [
+    {
+      "_id": "create-user",
+      "name": "Create user",
+      "url": "http://localhost:8081/users",
+      "method": "POST",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"usuario@example.com\",\n  \"password\": \"senha123\",\n  \"role\": \"ROLE_CUSTOMER\"\n}"
+      },
+      "auth": {},
+      "description": "Cria um novo usuário com role ROLE_CUSTOMER ou ROLE_ADMINISTRATOR."
+    },
+    {
+      "_id": "login",
+      "name": "Login",
+      "url": "http://localhost:8081/users/login",
+      "method": "POST",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"usuario@example.com\",\n  \"password\": \"senha123\"\n}"
+      },
+      "auth": {},
+      "description": "Faz login e retorna um token JWT."
+    },
+    {
+      "_id": "test-auth",
+      "name": "Get authenticated test",
+      "url": "http://localhost:8081/users/test",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ],
+      "body": {},
+      "auth": {},
+      "description": "Verifica se o token JWT é válido para acesso autenticado."
+    },
+    {
+      "_id": "test-customer",
+      "name": "Test CUSTOMER role",
+      "url": "http://localhost:8081/users/test/customer",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ],
+      "body": {},
+      "auth": {},
+      "description": "Verifica se o usuário tem a role ROLE_CUSTOMER."
+    },
+    {
+      "_id": "test-admin",
+      "name": "Test ADMINISTRATOR role",
+      "url": "http://localhost:8081/users/test/administrator",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ],
+      "body": {},
+      "auth": {},
+      "description": "Verifica se o usuário tem a role ROLE_ADMINISTRATOR."
+    },
+    {
+      "_id": "me",
+      "name": "Get current user",
+      "url": "http://localhost:8081/users/me",
+      "method": "GET",
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{token}}"
+        }
+      ],
+      "body": {},
+      "auth": {},
+      "description": "Retorna os dados do usuário autenticado."
+    }
+  ],
+  "folders": []
+}

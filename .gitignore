@@ -1,0 +1,70 @@
+# Maven build output
+target/
+**/target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Maven wrapper binary downloaded/generated locally
+.mvn/wrapper/maven-wrapper.jar
+**/.mvn/wrapper/maven-wrapper.jar
+
+# Logs and runtime output
+logs/
+*.log
+*.pid
+
+# Local environment files
+.env
+.env.*
+!.env.example
+*.local
+
+# Java/JVM generated files
+*.class
+hs_err_pid*
+replay_pid*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# STS / Eclipse
+.apt_generated
+.apt_generated_tests
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+.vscode/
+
+# Python virtual environment used by local tooling
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# App modernization artifacts
+.github/java-upgrade/
