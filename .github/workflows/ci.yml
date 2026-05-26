@@ -31,7 +31,6 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{ env.JAVA_VERSION }}
-          cache: m2
 
       - name: Ensure Maven wrapper is executable
         run: chmod +x ./mvnw
